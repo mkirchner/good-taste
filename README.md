@@ -16,6 +16,9 @@
 
 ## Introduction
 
+***Update***: there's an improved version of this project:
+[good-taste][good-taste]. It contains most of what's described here, plus more.
+
 In a 2016 [TED interview][ted] (14:10) Linus Torvalds speaks about what he
 considers *good taste* in coding. As an example, he presents two
 implementations of item removal in singly linked lists (reproduced below).  In
@@ -289,3 +292,4 @@ it's certainly a different, creative and very elegant solution to a well-known
 CS task.
 
 [ted]: https://www.ted.com/talks/linus_torvalds_the_mind_behind_linux
+[good-taste]: https://felipec.github.io/good-taste/
