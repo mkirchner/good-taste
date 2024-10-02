@@ -21,10 +21,11 @@ void remove_cs101(list *l, list_item *target)
  * This is a linear O(n) search.
  *
  * @param l A list of integers
- * @param target The list item to find
+ * @param target The list item to find.  Must exist in the list, or be NULL,
+           otherwise undefined behavior.
  * @return Pointer to the `next` pointer of the item that precedes
  *         `target`, or `head`. Pointer to the last `next` field in the list
- *         if `target` is not in `l`.
+ *         if `target` is NULL.
  */
 static inline list_item **find_indirect(list *l, list_item *target)
 {
@@ -51,8 +52,9 @@ void remove_elegant(list *l, list_item *target)
  * @param l A list of integers
  * @param before Pointer to item before which the new item should be inserted.
  *               If `before` points to the list head, the new item will be
- *               inserted at the beginning; if `before` is NULL or invalid,
- *               the item will be appended at the the end of the list
+ *               inserted at the beginning; if `before` is NULL,
+ *               the item will be appended at the the end of the list;
+ *               otherwise undefined behavior.
  * @param item The item to insert
  */
 void insert_before(list *l, list_item *before, list_item *item)

@@ -138,6 +138,10 @@ i.e. the address of the `next` element in the current `list_item`.
 When the pointer to the list item `*p` equals `target`, we exit the search
 loop and remove the item from the list.
 
+(If `target` isn't in the list, and isn't NULL, then `find_indirect` will
+dereference `NULL` and crash.  If this case can happen, check if `*p == NULL`
+inside the loop and handle this error appropriately.)
+
 
 ## How does it work?
 
@@ -254,6 +258,8 @@ void remove_elegant(list *l, list_item *target)
 }
 ```
 
+
+
 ### Implementing `insert_before()`
 
 Using `find_indirect()`, it is straightforward to implement `insert_before()`:
@@ -269,9 +275,8 @@ void insert_before(list *l, list_item *before, list_item *item)
 
 A particularly beautiful outcome is that the implementation has consistent
 semantics for the edge cases: if `before` points to the list head, the new item
-will be inserted at the beginning of the list, if `before` is `NULL` or invalid
-(i.e. the item does not exist in `l`), the new item will be appended at the
-end.
+will be inserted at the beginning of the list.  If `before` is `NULL`, the
+new item will be appended at the end of the list.
 
 
 ## Conclusion
