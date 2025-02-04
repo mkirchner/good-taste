@@ -1,4 +1,4 @@
-# Linked lists, pointer tricks and good taste
+# TIGO-0001: Linked lists, pointer tricks and good taste
 
 * [Introduction](#introduction)
 * [The code](#the-code)
